@@ -4,6 +4,13 @@ import jakarta.persistence.*;
 
 @Entity
 public class Payment {
+    public Payment(int id, String method, String number, Address billingAddress) {
+        this.id = id;
+        this.method = method;
+        this.number = number;
+        this.billingAddress = billingAddress;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -17,7 +24,9 @@ public class Payment {
     @JoinColumn(name = "address_id")
     private Address billingAddress;
 
+    public Payment() {
 
+    }
 
 
     public int getId() {

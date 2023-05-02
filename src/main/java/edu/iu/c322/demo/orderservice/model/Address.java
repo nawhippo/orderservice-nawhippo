@@ -8,6 +8,11 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+
+    @OneToOne(mappedBy = "shippingAddress")
+    private Order order;
+
+
     private String state;
     private String city;
     private int postalCode;

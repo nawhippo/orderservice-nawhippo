@@ -18,6 +18,16 @@ public class OrderItem {
     @JoinColumn(name = "order_id")
     private Order order;
 
+    private String returnReason;
+
+    public String getReturnReason() {
+        return returnReason;
+    }
+
+    public void setReturnReason(String returnReason) {
+        this.returnReason = returnReason;
+    }
+
     public int getId() {
         return id;
     }
